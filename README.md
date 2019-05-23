@@ -1,6 +1,6 @@
 # Getting Started with PowerShell
 
-Welcome to the Getting Started with PowerShell module! This module consists of 2 lessons to help you learn the fundamentals required to interact with PowerShell cmdlets.
+Welcome to the Getting Started with PowerShell module! This module consists of 3 lessons to help you learn the fundamentals required to interact with PowerShell cmdlets.
 
 ## :pencil: Lessons
 
