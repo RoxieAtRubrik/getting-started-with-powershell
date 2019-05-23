@@ -3,22 +3,30 @@
 
 # Lesson 3: Storing Data
 
-In Visual Studio Code (VSCode), open a new file and save it as `Lesson3.ps1`. Solve the goals below.
+In Visual Studio Code (VSCode), open a new file and save it as `Lesson3.ps1`.
 
-Goal 1: Create a new variable named $File and store the string "Lesson-3.json" to reference a JSON file saved in the root of this repository's folder.
+Next, open another new file and paste the contents of the [Lesson-3.json](Lesson-3.json) file into it. Save this file as `Lesson-3.json`.
 
-Goal 2: Use Get-Content to retrieve the contents from the `$File` path. Hint: You will need to use the "-Raw" parameter to prevent the parser from formatting the data.
+Solve the goals below.
 
-Goal 3: Use ConvertFrom-Json to convert the raw JSON data into a PowerShell native hashtable object. Store the results in `$ContentNative`.
+#### Goal 1
+Create a new variable named `$File` and store the string "[Lesson-3.json](Lesson-3.json)" to reference a JSON file saved in the root of this repository's folder.
 
-Bonus: Display the contents of key6.
+#### Goal 2
+Use Get-Content to retrieve the contents from the `$File` path. Hint: You will need to use the "-Raw" parameter to prevent the parser from formatting the data.
+
+#### Goal 3
+Use ConvertFrom-Json to convert the raw JSON data into a PowerShell native hashtable object. Store the results in `$ContentNative`.
+
+#### Bonus
+Display the contents of key6.
 
 ### Answers
 <details><summary>CLICK ME</summary>
 
 #### Goal 1
 ```
-$File = 'lesson04.json'
+$File = 'Lesson-3.json'
 ```
 
 #### Goal 2

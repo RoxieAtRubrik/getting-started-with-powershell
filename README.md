@@ -17,12 +17,12 @@ To get started, follow the steps outlined in each lesson.
 **Lesson 3: Storing Data**
 
 * Exercise can be found [here](Lesson-3.md).
+* JSON data file can be found [here](Lesson-3.json).
 
 ## :white_check_mark: Prerequisites
 
 There are a few services you'll need in order to get this lab off the ground:
 
-* Access to Rubrik CDM APIs
 * Microsoft Visual Studio Code (VSCode)
 
 ## :muscle: How You Can Help
