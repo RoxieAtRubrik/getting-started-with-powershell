@@ -69,7 +69,7 @@ This will send over an async request to snapshot the VM.
 
 Copy the request id and check the status of the request:
 
-`Get-RubrikRequest -id <CREATE_VMWARE_SNAPSHOT_value> -type `vmware/vm`
+`Get-RubrikRequest -id <CREATE_VMWARE_SNAPSHOT_value> -type 'vmware/vm'`
 
 Validate that the status is SUCCEEDED.
 
