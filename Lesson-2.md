@@ -1,43 +1,69 @@
 | Difficulty level: Beginner |
 | --- |
 
-# Lesson 2: Logical Flow
+# Lesson 2: Setting Variables and Authenticating
 
-In Visual Studio Code (VSCode), open a new file and save it as `Lesson2.ps1`. Solve the goals below.
+Now that you have configured your lab environment with a PowerShell Core session and the Rubrik SDK for PowerShell, it's time to work with Rubrik! For this to be successful, you will be storing your credentials and server IP into variables and then establishing a connection to the Rubrik cluster.
 
-#### Goal 1
-Store the path `C:\Windows\System32` into a string variable named `$Folder`
+## Lesson 2-1: Defining Variables
 
-#### Goal 2
-Use Test-Path on `$Folder` to determine if the path exists. Store the results into `$FolderTest`.
+To begin, we'll re-use the same PowerShell Core session from Lesson 1. Make sure it is open and ready to accept commands.
 
-#### Goal 3
-Use the "If" condition to check if the value of `$FolderTest` is `$True`. Provide a fun message with Write-Output. Use the "Else" condition to provide a sad message with Write-Output.
+We're going to define two different variables:
 
-#### Bonus
-Use the `$Folder` variable in your fun and sad messages.
+* `$Credential` will store the administrative username and password for the Rubrik cluster.
+* `$ClusterIP` will store the IP address of a node in the Rubrik cluster.
 
-### Answers
-<details><summary>CLICK ME</summary>
+The username, password, and node IP information can be found in [Lab Topology](/lab-topology.md).
 
-#### Goal 1
+### Creating a Credential Object
+
+Let's start with the `$Credential` variable. We're going to use the `Get-Credential` cmdlet to request a secure and encrypted credential object.
+
+`$Credential = Get-Credential`
+
+At this point, PowerShell will ask for the username and password:
+
 ```
-[String]$Folder = 'C:\Windows\System32'
+PowerShell credential request
+Enter your credentials.
+User: admin
+Password for user admin: ***********
 ```
 
-#### Goal 2
+With that complete, you can now see what is stored in `$Credential`:
+
 ```
-[Bool]$FolderTest = Test-Path $Folder
+C:\> $Credential
+
+UserName                     Password
+--------                     --------
+admin    System.Security.SecureString
 ```
 
-#### Goal 3
-```
-If ($FolderTest -eq $True) {
-    Write-Output "I have validated that $Folder exists!"
-}
-Else {
-    Write-Output "Oh no, $Folder does not exist! Wait - why does your computer even work right now?"
-}
-```
-
-</details>
+Note that the password value is `System.Security.SecureString` and is not displayed to the console. It has been encrypted in memory using your private user session. It's best to NEVER store a password in plain text, even if you are the only user on a system.
+
+### Setting the Cluster IP Address
+
+Next, set the cluster IP address. Make sure to encapsulate the IP address in single quotes since an IP address is a string (not an integer).
+
+`$ClusterIP = '192.168.2.150'`
+
+## Lesson 2-2: Connect to the Rubrik Cluster
+
+Now that you have two variables that are storing your credentials and cluster IP address, it's time to connect to the Rubrik cluster. Rather than mucking around in a playground or making long requests using curl, we're going to vastly simplify the process by using the Rubrik SDK for PowerShell. This module contains a function specifically written to make connecting to the cluster simple and easy.
+
+`Connect-Rubrik -Credential $Credential -Server $ClusterIP`
+
+![Connection](img/image2-1.png)
+
+You should see a table of data returned to you that describes:
+
+* The time of the connection
+* The `id` value of your session
+* The server IP address (that matches the `$ClusterIP` value)
+* Your `userId` value
+* The API version used to connect
+* The Rubrik cluster version (also known as the CDM version)
+
+You are now ready to continue to the next lab.

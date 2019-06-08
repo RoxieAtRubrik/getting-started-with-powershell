@@ -6,24 +6,24 @@ Welcome to the Getting Started with PowerShell module! This module consists of 3
 
 To get started, follow the steps outlined in each lesson.
 
-**Lesson 1: Variables**
+**Lesson 1: Preparing the Lab**
 
 * Exercise can be found [here](Lesson-1.md).
 
-**Lesson 2: Logical Flow**
+**Lesson 2: Setting Variables and Authenticating**
 
 * Exercise can be found [here](Lesson-2.md).
 
-**Lesson 3: Storing Data**
+**Lesson 3: Using the Rubrik SDK for PowerShell**
 
 * Exercise can be found [here](Lesson-3.md).
-* JSON data file can be found [here](Lesson-3.json).
 
 ## :white_check_mark: Prerequisites
 
 There are a few services you'll need in order to get this lab off the ground:
 
-* Microsoft Visual Studio Code (VSCode)
+* PowerShell Core
+* Rubrik cluster
 
 ## :muscle: How You Can Help
 
