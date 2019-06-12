@@ -91,7 +91,7 @@ Request a Live Mount:
 
 This will generate an async request to construct the Live Mount.
 
-### Further Tasks
+## Lesson 3-4: Other Administrative Tasks
 
 Using what you've learned in the previous lessons, perform the following tasks:
 
@@ -99,3 +99,15 @@ Using what you've learned in the previous lessons, perform the following tasks:
 * Get a list of active Live Mounts for the Rubrik cluster
 * Get a list of VMs known to the Rubrik cluster and find your Live Mount in the list
 * Destroy your Live Mount
+
+<details><summary>Click for Answer</summary>
+
+Use `Get-RubrikRequest` to check on the status of the Live Mount.
+
+Use `Get-RubrikMount` to get a list of Live Mounts from the Rubrik cluster.
+
+Use `Get-RubrikVM` to see a list of VMs. Make sure to filter by name for your Live Mount, which will have a few additional details appended to the name.
+
+Use `Get-RubrikMount -id <Your ID> | Remove-RubrikMount` to destroy your Live Mount. This will require accepting the change after issuing the command.
+
+</details>
