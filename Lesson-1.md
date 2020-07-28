@@ -84,7 +84,7 @@ Type `Y` and hit enter to continue with the installation.
 
 Check to make sure the module has been installed on your server:
 
-`Get-InstalledModule`
+`Get-InstalledModule Rubrik`
 
 You should now see a list of installed modules. It should include one named Rubrik.
 
