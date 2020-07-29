@@ -14,8 +14,6 @@ We're going to define two different variables:
 * `$Credential` will store the administrative username and password for the Rubrik cluster.
 * `$ClusterIP` will store the IP address of a node in the Rubrik cluster.
 
-The username, password, and node IP information can be found in [Lab Topology](/lab-topology.md).
-
 ### Creating a Credential Object
 
 Let's start with the `$Credential` variable. We're going to use the `Get-Credential` cmdlet to request a secure and encrypted credential object.
